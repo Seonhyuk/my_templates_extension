@@ -10,7 +10,11 @@ export const createSelect = (uri: any) => {
   if (fs.existsSync(templatesDir)) {
     const templateDirs = fs
       .readdirSync(templatesDir)
-      .filter((file) => fs.statSync(path.join(templatesDir, file)).isDirectory());
+      .filter(
+        (file) =>
+          fs.statSync(path.join(templatesDir, file)).isDirectory() &&
+          fs.readdirSync(path.join(templatesDir, file)).length !== 0
+      );
 
     const templates = vscode.window.createQuickPick();
     templates.items = templateDirs.map((dir) => ({ label: dir }));
