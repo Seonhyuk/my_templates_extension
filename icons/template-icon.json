@@ -1,0 +1,23 @@
+{
+  "iconDefinitions": {
+    "templateIcon": {
+      "iconPath": "./icon.svg"
+    }
+  },
+  "fileExtensions": {
+    "myt": "templateIcon"
+  },
+  "folderNames": {},
+  "fileNames": {},
+  "languageIds": {},
+  "light": {
+    "fileExtensions": {
+      "myt": "templateIcon"
+    }
+  },
+  "highContrast": {
+    "fileExtensions": {
+      "myt": "templateIcon"
+    }
+  }
+}
