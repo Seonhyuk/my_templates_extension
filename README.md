@@ -1,71 +1,37 @@
-# my-templates README
+# My Templates VS Code Extension
 
-This is the README for your extension "my-templates". After writing up a brief description, we recommend including the following sections.
+## Overview
+
+**My Templates** is a VS Code extension designed to enhance your development workflow by allowing you to manage and apply custom templates to specific file types. With this extension, you can easily define and manage templates for files with certain extensions, automatically applying predefined templates whenever a new file with that extension is created.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Template Management by Directory**: Create templates within the `/my_templates` directory of your project, categorized by directories. These templates can then be used to generate new files based on the selected template.
+- **Support for `.myt` Extension**: Files with the `.myt` extension are recognized and treated as plain text files, allowing you to edit and use them as templates.
 
-For example if there is an image subfolder under your extension project workspace:
+## Usage
 
-\!\[feature X\]\(images/feature-x.png\)
+### Creating a Custom Template
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+1. In your project, create a `/my_templates` directory at the root level.
+2. Inside the `/my_templates` directory, create subdirectories for each template category you want to manage.
+3. Within each subdirectory, create your template files.
+4. When creating a new file, you can select the desired template from the `/my_templates` directory, and the extension will automatically apply the content of the template to the new file.
+5. Within your template files, you can use placeholders like `{name}` and `{Name}`. When creating a new file, the extension will prompt you to enter a value, and it will replace `{name}` with the lowercase version of the entered value and `{Name}` with the capitalized version of the entered value.
 
-## Requirements
+#### Example:
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- **Template content**: `Hello, {Name}! Welcome to {name} world.`
+- **User input**: `world`
+- **Result**: `Hello, World! Welcome to world world.`
 
-## Extension Settings
+### Using `.myt` Extension
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+- You can create files with the `.myt` extension in your project. These files will be recognized and treated as plain text files by the extension.
 
-For example:
+#### Example:
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- **Template path**: `/my_templates/component/{name}.tsx.myt`
+- **Template content**: `const {name} = () => {};`
+- **User input**: `Badge`
+- **Result**: Creates `Badge.tsx` and content: `const Badge = () => {}`
