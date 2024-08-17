@@ -1,9 +1,11 @@
 {
   "name": "my-templates",
-  "displayName": "My Templates",
+  "displayName": "My Templates vscode",
   "description": "The My Templates extension enhances your development workflow by allowing you to manage and apply custom templates to specific file types. With this plugin, you can easily define and manage templates, and automatically apply them to new files with specific extensions.",
+  "publisher": "SeonhyukAhn",
   "version": "1.0.0",
-  "icon": "images/logo.png",
+  "icon": "icons/logo.png",
+  "repository": "https://github.com/Seonhyuk/my_templates_extension",
   "engines": {
     "vscode": "^1.92.0"
   },
